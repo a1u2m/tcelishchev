@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:src="@drawable/outline_account_circle_black_48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/text_tittle_margin"
+        android:maxLines="1"
+        android:text="@string/dev_life"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="@dimen/text_size"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile"
+        app:tabIndicatorColor="@color/selected_tab"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="@dimen/indicator_height"
+        app:tabSelectedTextColor="@color/selected_tab"
+        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabTextColor="@color/unselected_tab" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:translationZ="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
